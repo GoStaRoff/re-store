@@ -1,0 +1,28 @@
+.error-indicator {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  background-color: white;
+  width: 40vw;
+  height: 90%;
+  padding: 20px;
+  border-radius:  5vw 5vw 0px 0px;
+  box-shadow: 0 0 5vw rgb(238, 206, 62);
+}
+
+.text {
+  font-size: 2vh;
+  line-height: 4.5vh;
+}
+
+.title{
+    font-style:oblique;
+}
+
+.image {
+  height: 30vh;
+  width: 30vh;
+}
