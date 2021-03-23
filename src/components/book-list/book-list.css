@@ -1,7 +1,11 @@
 .book-list {
-  background-color: aqua;
+  list-style-type: none;
 }
 
 .book {
-  background-color: salmon;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+  padding: 10px;
+  padding-bottom: 30px;
+  display: flex;
 }

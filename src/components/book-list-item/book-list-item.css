@@ -1,0 +1,26 @@
+.book img {
+  height: 15vw;
+  width: 10vw;
+  margin-right: 40px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 20px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+}
+
+.book img:hover {
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+.book .book-title {
+  font-size: 1.4rem;
+  color: rgb(255, 0, 0);
+}
+
+.book .book-author {
+  font-size: 1.2rem;
+}
+
+.book .book-price {
+  font-size: 1.4rem;
+}
