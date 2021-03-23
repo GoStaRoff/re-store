@@ -9,7 +9,7 @@ const HomePage = (props) => {
   };
   if (error) {props.foo.bar = 0};
   return (
-    <div>
+    <div className="page">
       Home Page
       <BookList />
       <button className="btn btn-primary" onClick={throwError}>
