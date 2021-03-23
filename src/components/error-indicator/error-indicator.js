@@ -12,9 +12,10 @@ const ErrorIndicator = () => {
         <p className="text">
           Please wait, we should find and repair this problem ^-^
         </p>
-        <p className="text">
-          You may also refresh the page or try again later
-        </p>
+        <p className="text">You may also refresh the page or try again later</p>
+        <button class="btn refresh" onClick={() => window.location.reload()}>
+          Refresh
+        </button>
       </div>
       <Spinner />
     </div>

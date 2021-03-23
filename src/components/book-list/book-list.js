@@ -3,6 +3,7 @@ import BookListItem from "../book-list-item";
 import { connect } from "react-redux";
 import { withBookstoreService } from "../hoc";
 import { booksLoaded } from "../../actions";
+import './book-list.css'
 
 const BookList = ({ books, booksLoaded, bookstoreService }) => {
   useEffect(() => {
@@ -11,10 +12,10 @@ const BookList = ({ books, booksLoaded, bookstoreService }) => {
   }, [booksLoaded, bookstoreService]);
 
   return (
-    <ul>
+    <ul className="book-list">
       {books.map((book, index) => {
         return (
-          <li key={index}>
+          <li key={index} className="book">
             <BookListItem book={book} />
           </li>
         );
