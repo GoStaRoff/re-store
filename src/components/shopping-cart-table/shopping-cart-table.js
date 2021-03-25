@@ -1,7 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withBookstoreService } from "../hoc";
-import { bookAddedToCart } from "../../actions";
+import {
+  bookAddedToCart,
+  bookDecreaseFromCart,
+  bookDeleteFromCart,
+} from "../../actions";
 import "./shopping-cart-table.css";
 
 const ShoppingCartTable = ({
@@ -81,10 +85,10 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(bookAddedToCart(id));
     },
     onDecrease: (id) => {
-      console.log("De " + id);
+      dispatch(bookDecreaseFromCart(id));
     },
     onDelete: (id) => {
-      console.log("DE " + id);
+      dispatch(bookDeleteFromCart(id));
     },
   };
 };

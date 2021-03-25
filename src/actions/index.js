@@ -25,7 +25,19 @@ const bookAddedToCart = (bookId) => {
   };
 };
 
+const bookDeleteFromCart = (bookId) => {
+  return {
+    type: "BOOK_DELETE_FROM_CART",
+    payload: bookId,
+  };
+};
 
+const bookDecreaseFromCart = (bookId) => {
+  return {
+    type: "BOOK_DECREASE_FROM_CART",
+    payload: bookId,
+  };
+};
 
 const fetchBooks = (bookstoreService, dispatch) => () => {
   dispatch(booksRequested());
@@ -35,4 +47,12 @@ const fetchBooks = (bookstoreService, dispatch) => () => {
     .catch((err) => dispatch(booksError(err)));
 };
 
-export { booksLoaded, booksRequested, booksError, fetchBooks, bookAddedToCart};
+export {
+  booksLoaded,
+  booksRequested,
+  booksError,
+  fetchBooks,
+  bookAddedToCart,
+  bookDecreaseFromCart,
+  bookDeleteFromCart,
+};
