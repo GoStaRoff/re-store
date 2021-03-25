@@ -33,10 +33,13 @@ export default class BookstoreService {
         "https://naruto-shippudenmanga.com/wp-content/uploads/2020/07/naruto-manga.jpg",
     },
   ];
-  
+
   getBooks() {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       setTimeout(() => {
+        if (Math.random() > 0.75) {
+          reject(new Error("smth going wrong"));
+        }
         resolve(this.data);
       }, 700);
     });
