@@ -3,13 +3,20 @@ import BookListItem from "../book-list-item";
 import { connect } from "react-redux";
 import { withBookstoreService } from "../hoc";
 import { booksLoaded } from "../../actions";
-import './book-list.css'
+import Spinner from "../spinner";
+import "./book-list.css";
 
-const BookList = ({ books, booksLoaded, bookstoreService }) => {
+const BookList = ({ books, booksLoaded, bookstoreService, loading }) => {
   useEffect(() => {
-    const data = bookstoreService.getBooks();
-    booksLoaded(data);
+    bookstoreService.getBooks().then((data) => booksLoaded(data));
   }, [booksLoaded, bookstoreService]);
+
+  if (loading)
+    return (
+      <div className="spinner">
+        <Spinner />
+      </div>
+    );
 
   return (
     <ul className="book-list">
@@ -24,9 +31,10 @@ const BookList = ({ books, booksLoaded, bookstoreService }) => {
   );
 };
 
-const mapStateToProps = ({ books }) => {
+const mapStateToProps = ({ books, loading }) => {
   return {
     books,
+    loading,
   };
 };
 
