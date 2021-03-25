@@ -13,17 +13,16 @@
   box-shadow: 0 0 5vw rgb(238, 206, 62);
 }
 
-.text {
+.error-indicator .text {
   font-size: 2vh;
   line-height: 4.5vh;
 }
 
-.title {
+.error-indicator .title {
   font-style: oblique;
 }
 
-.image {
+.error-indicator .image {
   height: 30vh;
   width: 30vh;
 }
-
