@@ -2,7 +2,7 @@ export default class BookstoreService {
   data = [
     {
       id: 1,
-      tittle: "Naruto S1",
+      title: "Naruto S1",
       author: "Masasi Kisimoto",
       price: 35,
       image:
@@ -10,7 +10,7 @@ export default class BookstoreService {
     },
     {
       id: 2,
-      tittle: "Naruto S2",
+      title: "Naruto S2",
       author: "Masasi Kisimoto",
       price: 35,
       image:
@@ -18,7 +18,7 @@ export default class BookstoreService {
     },
     {
       id: 3,
-      tittle: "Naruto S3",
+      title: "Naruto S3",
       author: "Masasi Kisimoto",
       price: 35,
       image:
@@ -26,7 +26,7 @@ export default class BookstoreService {
     },
     {
       id: 4,
-      tittle: "Naruto S4",
+      title: "Naruto S4",
       author: "Masasi Kisimoto",
       price: 35,
       image:

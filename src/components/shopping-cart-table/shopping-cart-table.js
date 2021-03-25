@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withBookstoreService } from "../hoc";
+import { bookAddedToCart } from "../../actions";
 import "./shopping-cart-table.css";
 
 const ShoppingCartTable = ({
@@ -11,17 +12,17 @@ const ShoppingCartTable = ({
   onDelete,
 }) => {
   const renderRow = (item, index) => {
-    const { id, name, count, total } = item;
+    const { id, title, count, total } = item;
     return (
-      <tr key={id}>
+      <tr key={index}>
         <th scope="row">{index + 1}</th>
-        <td>{name}</td>
+        <td>{title}</td>
         <td>{count}</td>
         <td>${total}</td>
         <td>
           <button
             onClick={() => {
-              onDelete(id) ;
+              onDelete(id);
             }}
             className="btn btn-outline-danger btn-sm"
           >
@@ -74,10 +75,10 @@ const mapStateToProps = ({ cartItems, orderTotal }) => {
   };
 };
 
-const mapDispatchToProps = () => {
+const mapDispatchToProps = (dispatch) => {
   return {
     onIncrease: (id) => {
-      console.log("IN " + id);
+      dispatch(bookAddedToCart(id));
     },
     onDecrease: (id) => {
       console.log("De " + id);
