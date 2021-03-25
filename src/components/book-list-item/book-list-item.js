@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import "./book-list-item.css";
 
-const BookListItem = ({ book }) => {
+const BookListItem = ({ book, onAddedToCart }) => {
   const { tittle, author, image, price } = book;
   return (
     <Fragment>
@@ -12,7 +12,9 @@ const BookListItem = ({ book }) => {
         <p className="book-title">{tittle}</p>
         <p className="book-author">{author}</p>
         <p className="book-price">{price}$</p>
-        <button className="btn btn-restore">Add to cart</button>
+        <button onClick={onAddedToCart} className="btn btn-restore">
+          Add to cart
+        </button>
       </div>
     </Fragment>
   );
