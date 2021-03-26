@@ -5,6 +5,7 @@ import { withBookstoreService } from "../hoc";
 import { fetchBooks, bookAddedToCart } from "../../actions";
 import Spinner from "../spinner";
 import "./book-list.css";
+import { bindActionCreators } from "redux";
 
 const BookList = ({ books, onAddedToCart }) => {
   return (
@@ -54,10 +55,13 @@ const mapStateToProps = ({ bookList: { books, loading, error } }) => {
 };
 
 const mapDispatchToProps = (dispatch, { bookstoreService }) => {
-  return {
-    fetchBooks: fetchBooks(bookstoreService, dispatch),
-    onAddedToCart: (bookId) => dispatch(bookAddedToCart(bookId)),
-  };
+  return bindActionCreators(
+    {
+      fetchBooks: fetchBooks(bookstoreService),
+      onAddedToCart: bookAddedToCart,
+    },
+    dispatch
+  );
 };
 
 export default withBookstoreService()(
